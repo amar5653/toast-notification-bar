@@ -8,9 +8,9 @@
 </head>
 <body>
     <div class="buttons">
-        <button class="btn" onclick="showToast()">Success</button>
-        <button class="btn" onclick="showToast()">Error</button>
-        <button class="btn" onclick="showToast()">Invalid</button>
+        <button class="btn" onclick="showToast(successMsg)">Success</button>
+        <button class="btn" onclick="showToast(errorMsg)">Error</button>
+        <button class="btn" onclick="showToast(invalidMsg)">Invalid</button>
     </div>
     <div class="toast-box">
 
@@ -18,6 +18,28 @@
 </body>
 
 <script>
-    
+    const toastBox = document.querySelector(".toast-box");
+  const successMsg = "Successful!";
+  const errorMsg = "<i class='fa-solid fa-square-xmark'></i>Oops! error message.";
+  const invalidMsg = "<i class='fa-solid fa-circle-exclamation'></i>Invalid information."
+
+    function showToast(msg){
+       const toast = document.createElement("div");
+           toast.classList.add("toast");
+           toastBox.appendChild(toast);
+           toast.innerHTML = msg;
+
+
+           if(msg.includes('error')){
+            toast.classList.add("error");
+           } else if(msg.includes('Invalid')) {
+            toast.classList.add("invalid");
+           }
+
+        //    setTimeout(()=>{
+        //         toast.remove();
+        //    },1000);
+    }
 </script>
+<script src="https://kit.fontawesome.com/7e22486cc7.js" crossorigin="anonymous"></script>
 </html>
