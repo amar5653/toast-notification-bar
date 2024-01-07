@@ -19,7 +19,7 @@
 
 <script>
     const toastBox = document.querySelector(".toast-box");
-  const successMsg = "Successful!";
+  const successMsg = "<i class='fa-solid fa-check'></i>Successful!";
   const errorMsg = "<i class='fa-solid fa-square-xmark'></i>Oops! error message.";
   const invalidMsg = "<i class='fa-solid fa-circle-exclamation'></i>Invalid information."
 
@@ -36,9 +36,9 @@
             toast.classList.add("invalid");
            }
 
-        //    setTimeout(()=>{
-        //         toast.remove();
-        //    },1000);
+           setTimeout(()=>{
+                toast.remove();
+           },1000);
     }
 </script>
 <script src="https://kit.fontawesome.com/7e22486cc7.js" crossorigin="anonymous"></script>
